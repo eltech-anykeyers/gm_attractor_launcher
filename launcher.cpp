@@ -108,10 +108,10 @@ void Launcher::runViewer()
     }
 
     QStringList args;
-    args << mFirstAttractorTrajectoryComboBox.currentText()  <<
-            mFirstAttractorSectionComboBox.currentText()     <<
-            mSecondAttractorTrajectoryComboBox.currentText() <<
-            mSecondAttractorSectionComboBox.currentText();
+    args << mFirstAttractorTrajectoryComboBox.currentText()  + "/" <<
+            mFirstAttractorSectionComboBox.currentText()     + "/" <<
+            mSecondAttractorTrajectoryComboBox.currentText() + "/" <<
+            mSecondAttractorSectionComboBox.currentText()    + "/";
 
     mViewerProcess = std::make_unique<QProcess>(this);
     mViewerProcess->start(sViewerFile, args);
